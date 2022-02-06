@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        .head {
+            background-color: rgb(245, 237, 220);
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <h1>Simple Calculator</h1>
+        <hr>
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+                <label>Value 1 : </label>
+                <input type="text" value="{{n1}}" name="num1">
+                <br>
+                <br>
+                <label>Select Operation : </label>
+                <select name="opr">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <br>
+                <br>
+                <label>Value 2 : </label>
+                <input type="text" value="{{n2}}" name="num2">
+                <br>
+                <br>
+                <button type="submit">Calculate</button>
+                <br>
+                <br>
+                <label>Output : </label>
+                <input type="text" value="{{c}}" name="output">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
